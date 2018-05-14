@@ -1,3 +1,4 @@
+
 {
     "define": {
         "prefix": "def",
@@ -115,24 +116,35 @@
         ],
         "description": "switch"
     },
+    "try": {
+		"prefix": "try",
+		"body": [
+			"try {",
+			"\t${1}",
+			"} catch (${2:Exception} \\$e) {",
+			"\t",
+			"}"
+		],
+		"description": "Try/Catch Block"
+	},
     "globals": {
         "prefix": "$G",
         "body": [
-            "$GLOBALS[\"${1:name}\"]"
+            "$$GLOBALS[\"${1:name}\"]"
         ],
         "description": "globals"
     },
     "server": {
         "prefix": "$se",
         "body": [
-            "$_SERVER[\"${1:name}\"]"
+            "$$_SERVER[\"${1:name}\"]"
         ],
         "description": "server"
     },
     "request": {
         "prefix": "$r",
         "body": [
-            "$_REQUEST[\"${1:name}\"]"
+            "$$_REQUEST[\"${1:name}\"]"
         ],
         "description": "request"
     },
